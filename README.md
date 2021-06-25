@@ -39,11 +39,14 @@ Many students have also experienced the difficulties in collating orders. We usu
   * Creation of a ‘Top rated’ list in the menu, which consists of the top few best rated food
   
 ## Usage
-To start the telebot, add @captsupperbot (to be confirmed) to a group. 
+To start the telebot, add @captsuppertest3bot to a group. 
 
-Then, execute `\start` and toggle between the buttons
+Then, execute `\startorder` and toggle between the buttons
 
 
 ## Notes 
 * Only one bot can be ran in each group at any one time
 * Each person can only order if he/she does not have any outstanding payment incurred from previous orders
+
+## Link to more detailed README
+Link to README: 
