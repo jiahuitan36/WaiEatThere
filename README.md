@@ -12,7 +12,7 @@ Created with Python, MySQL and Telegram’s BotFather and pyTelegramBotAPI.
 
 
 ## Demo
-Link to live demo: 
+Link to live demo: https://www.youtube.com/watch?v=x8MGODSSd5g&ab_channel=JosiahFoo
 
 ## Motivations 
 As students staying on campus, supper orders are a regular part of hostel life. Students will likely order delivery for supper at least once a week, and often ask each other to help takeaway food when they order lunch as well.
@@ -49,4 +49,4 @@ Then, execute `\startorder` and toggle between the buttons
 * Each person can only order if he/she does not have any outstanding payment incurred from previous orders
 
 ## Link to more detailed README
-Link to README: 
+Link to README: https://docs.google.com/document/d/1SmJzhFRgrpuUAE4reUO4XfJHEJCBx2wB9E5jJSqifiY/edit?usp=sharing
