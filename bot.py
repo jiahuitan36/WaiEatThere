@@ -57,8 +57,8 @@ def startorder(message):
 
         #text = "Where would you like to order from?" + '\n' + "If you are a new user, please click on the New User button"
         line1 = "Welcome! This is a supper bot specially designed to make the order compilation and payment processes easier!"
-        line2 = "If you are a new user, please click on the New User button"
-        line3 = "Else, click on the restaurant where you would like to order from"
+        line2 = "If you are a new user, please click on the New User button and click on the Start button in the chat with the bot."
+        line3 = "Else, click on Al Amaan's to start ordering."
         line4 = "Just a few things to note when using this bot:"
         line5 = "1. Do not start more than 1 bot in the group!"
         line6 = "2. If you have an outstanding payment, you will not be able to order anything"
@@ -78,7 +78,7 @@ def start(message):
     cursor = connection.cursor()
     cursor.execute('INSERT IGNORE INTO `user` VALUES(%s, %s)', (message.from_user.id, message.from_user.username))
     connection.commit()
-    bot.send_message(message.chat.id, "Welcome to CAPT Supper Bot! You can now proceed to add your orders. Please proceed back to your group chat and press the Insert Order button.")
+    bot.send_message(message.chat.id, "Welcome to CAPT Supper Bot! You can now proceed to add your orders. Please proceed back to your group chat and press the Al Amaan's button.")
 
 @bot.message_handler(commands=['test'])
 def test(message):
