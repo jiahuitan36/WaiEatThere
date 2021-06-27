@@ -49,4 +49,4 @@ Then, execute `\startorder` and toggle between the buttons
 * Each person can only order if he/she does not have any outstanding payment incurred from previous orders
 
 ## Link to more detailed README
-Link to README: https://docs.google.com/document/d/1SmJzhFRgrpuUAE4reUO4XfJHEJCBx2wB9E5jJSqifiY/edit?usp=sharing
+Link to README: https://docs.google.com/document/d/1SmJzhFRgrpuUAE4reUO4XfJHEJCBx2wB9E5jJSqifiY/edit
