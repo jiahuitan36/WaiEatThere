@@ -36,7 +36,7 @@ Many students have also experienced the difficulties in collating orders. We usu
 * Reviews
   * Allow for users to give reviews for items that they ordered 
   * Allow users to view the reviews for each item on the menu 
-  * Creation of a ‘Top rated’ list in the menu, which consists of the top few best rated food
+  * Creation of a ‘Best Sellers’ list in the menu, which consists of the top few best rated food
   
 ## Usage
 To start the telebot, add @captsuppertest3bot to a group. 
