@@ -31,7 +31,6 @@ Many students have also experienced the difficulties in collating orders. We usu
   * Allow for the display of the total order cost
   * Allow for the display of individual order costs for each person
   * Allow users to remove their name from the payment list with a button press
-  * Automatically sends reminders to users who have not paid after 24 hours
 
 * Reviews
   * Allow for users to give reviews for items that they ordered 
@@ -49,4 +48,4 @@ Then, execute `\startorder` and toggle between the buttons
 * Each person can only order if he/she does not have any outstanding payment incurred from previous orders
 
 ## Link to more detailed README
-Link to README: https://docs.google.com/document/d/1SmJzhFRgrpuUAE4reUO4XfJHEJCBx2wB9E5jJSqifiY/edit
+Link to README: https://docs.google.com/document/d/1Ev1b1hBD8TsuBASkPrUawqm-PJjsDtdTzF3pdR_XckE/edit
