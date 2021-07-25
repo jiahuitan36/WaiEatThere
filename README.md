@@ -12,7 +12,7 @@ Created with Python, MySQL and Telegram’s BotFather and pyTelegramBotAPI.
 
 
 ## Demo
-Link to live demo: https://www.youtube.com/watch?v=x8MGODSSd5g&ab_channel=JosiahFoo
+Link to live demo:
 
 ## Motivations 
 As students staying on campus, supper orders are a regular part of hostel life. Students will likely order delivery for supper at least once a week, and often ask each other to help takeaway food when they order lunch as well.
