@@ -67,6 +67,8 @@ def startorder(message):
             username = cursor.fetchone()[0]
             payment_message += username + " needs to pay $" + str(payment[1])
         
+        paymoney_data = "pay money"
+
         keyboard = [[types.InlineKeyboardButton("Pay Money", callback_data='pay money')]]
         markup = types.InlineKeyboardMarkup(keyboard)
         bot.send_message(message.chat.id, payment_message, reply_markup = markup)
@@ -528,6 +530,8 @@ def handle_callback(call):
         total_amount = cursor.fetchone()[0]
         print(total_amount)
 
+        delivery_fee = 0
+
         if total_amount < 50:
             print(total_amount)
             delivery_fee = round((3 / len(users)), 2)
@@ -561,17 +565,41 @@ def handle_callback(call):
         cursor.execute('DELETE FROM orders WHERE group_id = (%s)', (call.message.chat.id,))
         connection.commit()
 
-        keyboard = [[types.InlineKeyboardButton("Pay Money", callback_data='pay money')]]
+        paymoney_data = "pay money" + "/" + str(call.message.chat.id) + "/" + str(call.message.message_id) + "/" + str(delivery_fee)
+
+        keyboard = [[types.InlineKeyboardButton("Pay Money", callback_data = paymoney_data)]]
         markup = types.InlineKeyboardMarkup(keyboard)
         bot.edit_message_text(chat_id = call.message.chat.id, message_id = call.message.message_id, text = result, reply_markup=markup)
     
-    if call.data == "pay money":
+    #if call.data == "pay money":
+    if "pay money" in data:
         cursor.execute('delete from payment where user_id = (%s)', (call.from_user.id,))
         connection.commit()
 
         text = "Payment Cleared by " + call.from_user.username
 
         bot.send_message(call.message.chat.id, text)
+
+        cursor.execute('SELECT user_id, payment_amount FROM payment WHERE group_id = (%s)', (call.message.chat.id,))
+        users = cursor.fetchall()
+        if len(data) > 1:
+            result = "Here is your bill!" + '\n' + "(Delivery charge of $" + data[3] + " is already included in your total bill)"
+        else:
+            result = "Please clear all outstanding payments first!"
+        for user in users:
+            cursor.execute('SELECT username FROM user WHERE user_id = (%s)', (user[0],))
+            username = cursor.fetchone()[0]
+            result += '\n' + username + " needs to pay " + str(user[1])
+
+        if len(data) > 1:
+            paymoney_data = "pay money" + "/" + data[1] + "/" + data[2] + "/" + data[3]
+        else:
+            paymoney_data = "pay money"
+
+        keyboard = [[types.InlineKeyboardButton("Pay Money", callback_data = paymoney_data)]]
+        markup = types.InlineKeyboardMarkup(keyboard)
+
+        bot.edit_message_text(chat_id = call.message.chat.id, message_id = call.message.message_id, text = result, reply_markup = markup)
 
         #cursor.execute('SELECT DISTINCT item_id FROM orders WHERE user_id=(%s) AND group_id=(%s)', (call.from_user.id, call.message.chat.id,))
         cursor.execute('SELECT DISTINCT item_id FROM reviews WHERE user_id=(%s) AND review=(%s)', (call.from_user.id, 0,))
